@@ -12,158 +12,194 @@ provides-dynamic-lookup:
 depends-top-level:
 - !private "%"
 - !private "*"
+- !private "+"
+- !private "/"
+- !private "=="
 - !private ">"
-- !private "Array"
+- "Array"
 - "AssignmentPrecedence"
 - "HashElement"
 - "HashTable"
 - "Hashable"
 - "Int"
 - !private "StringLiteralType"
+- "Void"
 - !private "assert"
 - !private "repeatElement"
 depends-member:
 - !private ["Sa", "init"]
 - !private ["Sa", "isEmpty"]
+- !private ["Sa", "key"]
 - !private ["Sa", "subscript"]
 - !private ["s10ArraySliceV", "isEmpty"]
+- !private ["s10ArraySliceV", "key"]
 - !private ["s10ArraySliceV", "subscript"]
+- !private ["s10ArraySliceV", "value"]
 - !private ["s23BidirectionalCollectionP", "init"]
 - !private ["s23BidirectionalCollectionP", "isEmpty"]
+- !private ["s23BidirectionalCollectionP", "key"]
 - !private ["s23BidirectionalCollectionP", "subscript"]
-- !private ["s13BinaryIntegerP", "hashValue"]
+- !private ["s23BidirectionalCollectionP", "value"]
 - !private ["Sb", "_getBuiltinLogicValue"]
-- !private ["s7CVarArgP", "hashValue"]
 - !private ["s7CVarArgP", "init"]
 - !private ["s7CVarArgP", "isEmpty"]
+- !private ["s7CVarArgP", "key"]
 - !private ["s7CVarArgP", "subscript"]
 - !private ["s10CollectionP", "init"]
 - !private ["s10CollectionP", "isEmpty"]
+- !private ["s10CollectionP", "key"]
 - !private ["s10CollectionP", "subscript"]
-- !private ["s10ComparableP", "hashValue"]
+- !private ["s10CollectionP", "value"]
 - !private ["s28CustomDebugStringConvertibleP", "init"]
 - !private ["s28CustomDebugStringConvertibleP", "isEmpty"]
+- !private ["s28CustomDebugStringConvertibleP", "key"]
 - !private ["s28CustomDebugStringConvertibleP", "subscript"]
+- !private ["s28CustomDebugStringConvertibleP", "value"]
 - !private ["s29CustomPlaygroundQuickLookableP", "_getBuiltinLogicValue"]
-- !private ["s29CustomPlaygroundQuickLookableP", "hashValue"]
 - !private ["s17CustomReflectableP", "_getBuiltinLogicValue"]
-- !private ["s17CustomReflectableP", "hashValue"]
 - !private ["s17CustomReflectableP", "init"]
 - !private ["s17CustomReflectableP", "isEmpty"]
+- !private ["s17CustomReflectableP", "key"]
 - !private ["s17CustomReflectableP", "subscript"]
+- !private ["s17CustomReflectableP", "value"]
 - !private ["s23CustomStringConvertibleP", "_getBuiltinLogicValue"]
-- !private ["s23CustomStringConvertibleP", "hashValue"]
 - !private ["s23CustomStringConvertibleP", "init"]
 - !private ["s23CustomStringConvertibleP", "isEmpty"]
+- !private ["s23CustomStringConvertibleP", "key"]
 - !private ["s23CustomStringConvertibleP", "subscript"]
+- !private ["s23CustomStringConvertibleP", "value"]
 - !private ["s9DecodableP", "_getBuiltinLogicValue"]
-- !private ["s9DecodableP", "hashValue"]
 - !private ["s9DecodableP", "init"]
 - !private ["s9DecodableP", "isEmpty"]
+- !private ["s9DecodableP", "key"]
 - !private ["s9DecodableP", "subscript"]
 - !private ["s9EncodableP", "_getBuiltinLogicValue"]
-- !private ["s9EncodableP", "hashValue"]
 - !private ["s9EncodableP", "init"]
 - !private ["s9EncodableP", "isEmpty"]
+- !private ["s9EncodableP", "key"]
 - !private ["s9EncodableP", "subscript"]
 - !private ["s9EquatableP", "_getBuiltinLogicValue"]
 - !private ["s9EquatableP", "hashValue"]
 - !private ["s25ExpressibleByArrayLiteralP", "init"]
 - !private ["s25ExpressibleByArrayLiteralP", "isEmpty"]
+- !private ["s25ExpressibleByArrayLiteralP", "key"]
 - !private ["s25ExpressibleByArrayLiteralP", "subscript"]
+- !private ["s25ExpressibleByArrayLiteralP", "value"]
 - !private ["s27ExpressibleByBooleanLiteralP", "_getBuiltinLogicValue"]
 - !private ["s43ExpressibleByExtendedGraphemeClusterLiteralP", "init"]
-- !private ["s27ExpressibleByIntegerLiteralP", "hashValue"]
 - !private ["s26ExpressibleByStringLiteralP", "init"]
 - !private ["s33ExpressibleByUnicodeScalarLiteralP", "init"]
-- !private ["s17FixedWidthIntegerP", "hashValue"]
 - ["10CuckooHash0B7ElementV", "Int"]
 - ["10CuckooHash0B7ElementV", "U"]
 - ["10CuckooHash0B7ElementV", "init"]
 - ["10CuckooHash0B7ElementV", "key"]
 - ["10CuckooHash0B7ElementV", "value"]
-- !private ["10CuckooHash0B5TableV", "Array"]
+- ["10CuckooHash0B5TableV", "Array"]
 - ["10CuckooHash0B5TableV", "Bucket"]
 - ["10CuckooHash0B5TableV", "HashElement"]
 - ["10CuckooHash0B5TableV", "Int"]
+- ["10CuckooHash0B5TableV", "Key"]
+- ["10CuckooHash0B5TableV", "Void"]
 - !private ["10CuckooHash0B5TableV", "assert"]
 - ["10CuckooHash0B5TableV", "bucket1"]
 - ["10CuckooHash0B5TableV", "bucket2"]
 - ["10CuckooHash0B5TableV", "bucketsize"]
 - ["10CuckooHash0B5TableV", "capacity"]
+- ["10CuckooHash0B5TableV", "getValue"]
 - ["10CuckooHash0B5TableV", "hash1"]
 - ["10CuckooHash0B5TableV", "hash2"]
 - ["10CuckooHash0B5TableV", "init"]
 - !private ["10CuckooHash0B5TableV", "repeatElement"]
 - ["10CuckooHash0B5TableV", "set"]
+- ["10CuckooHash0B5TableV", "setValue"]
 - !private ["s8HashableP", "_getBuiltinLogicValue"]
 - !private ["s8HashableP", "hashValue"]
-- !private ["Si", "hashValue"]
 - !private ["s25LosslessStringConvertibleP", "_getBuiltinLogicValue"]
-- !private ["s25LosslessStringConvertibleP", "hashValue"]
-- !private ["s10MirrorPathP", "hashValue"]
+- !private ["s25MutableBidirectionalSliceV", "key"]
+- !private ["s25MutableBidirectionalSliceV", "value"]
 - !private ["s17MutableCollectionP", "init"]
 - !private ["s17MutableCollectionP", "isEmpty"]
+- !private ["s17MutableCollectionP", "key"]
 - !private ["s17MutableCollectionP", "subscript"]
-- !private ["s7NumericP", "hashValue"]
+- !private ["s17MutableCollectionP", "value"]
+- !private ["s24MutableRandomAccessSliceV", "key"]
+- !private ["s24MutableRandomAccessSliceV", "value"]
+- !private ["s12MutableSliceV", "key"]
+- !private ["s12MutableSliceV", "value"]
 - !private ["s22RandomAccessCollectionP", "init"]
 - !private ["s22RandomAccessCollectionP", "isEmpty"]
+- !private ["s22RandomAccessCollectionP", "key"]
 - !private ["s22RandomAccessCollectionP", "subscript"]
+- !private ["s22RandomAccessCollectionP", "value"]
 - !private ["s26RangeReplaceableCollectionP", "init"]
 - !private ["s26RangeReplaceableCollectionP", "isEmpty"]
+- !private ["s26RangeReplaceableCollectionP", "key"]
 - !private ["s26RangeReplaceableCollectionP", "subscript"]
+- !private ["s26RangeReplaceableCollectionP", "value"]
+- !private ["s21RangeReplaceableSliceV", "key"]
+- !private ["s21RangeReplaceableSliceV", "value"]
 - !private ["s8SequenceP", "init"]
 - !private ["s8SequenceP", "isEmpty"]
+- !private ["s8SequenceP", "key"]
 - !private ["s8SequenceP", "subscript"]
-- !private ["s13SignedIntegerP", "hashValue"]
-- !private ["s13SignedNumericP", "hashValue"]
+- !private ["s8SequenceP", "value"]
 - !private ["s12StaticStringV", "init"]
-- !private ["s10StrideableP", "hashValue"]
 - !private ["s14_ArrayProtocolP", "init"]
 - !private ["s14_ArrayProtocolP", "isEmpty"]
+- !private ["s14_ArrayProtocolP", "key"]
 - !private ["s14_ArrayProtocolP", "subscript"]
+- !private ["s14_ArrayProtocolP", "value"]
 - !private ["s23_BidirectionalIndexableP", "init"]
 - !private ["s23_BidirectionalIndexableP", "isEmpty"]
+- !private ["s23_BidirectionalIndexableP", "key"]
 - !private ["s23_BidirectionalIndexableP", "subscript"]
-- !private ["s18_BitwiseOperationsP", "hashValue"]
+- !private ["s23_BidirectionalIndexableP", "value"]
 - !private ["s24_DestructorSafeContainerP", "init"]
 - !private ["s24_DestructorSafeContainerP", "isEmpty"]
+- !private ["s24_DestructorSafeContainerP", "key"]
 - !private ["s24_DestructorSafeContainerP", "subscript"]
+- !private ["s24_DestructorSafeContainerP", "value"]
 - !private ["s35_ExpressibleByBuiltinBooleanLiteralP", "_getBuiltinLogicValue"]
 - !private ["s51_ExpressibleByBuiltinExtendedGraphemeClusterLiteralP", "init"]
-- !private ["s35_ExpressibleByBuiltinIntegerLiteralP", "hashValue"]
 - !private ["s34_ExpressibleByBuiltinStringLiteralP", "init"]
 - !private ["s41_ExpressibleByBuiltinUnicodeScalarLiteralP", "init"]
 - !private ["s10_IndexableP", "init"]
 - !private ["s10_IndexableP", "isEmpty"]
+- !private ["s10_IndexableP", "key"]
 - !private ["s10_IndexableP", "subscript"]
+- !private ["s10_IndexableP", "value"]
 - !private ["s14_IndexableBaseP", "init"]
 - !private ["s14_IndexableBaseP", "isEmpty"]
+- !private ["s14_IndexableBaseP", "key"]
 - !private ["s14_IndexableBaseP", "subscript"]
+- !private ["s14_IndexableBaseP", "value"]
 - !private ["s17_MutableIndexableP", "init"]
 - !private ["s17_MutableIndexableP", "isEmpty"]
+- !private ["s17_MutableIndexableP", "key"]
 - !private ["s17_MutableIndexableP", "subscript"]
+- !private ["s17_MutableIndexableP", "value"]
 - !private ["s21_ObjectiveCBridgeableP", "_getBuiltinLogicValue"]
-- !private ["s21_ObjectiveCBridgeableP", "hashValue"]
 - !private ["s21_ObjectiveCBridgeableP", "init"]
 - !private ["s21_ObjectiveCBridgeableP", "isEmpty"]
+- !private ["s21_ObjectiveCBridgeableP", "key"]
 - !private ["s21_ObjectiveCBridgeableP", "subscript"]
 - !private ["s22_RandomAccessIndexableP", "init"]
 - !private ["s22_RandomAccessIndexableP", "isEmpty"]
+- !private ["s22_RandomAccessIndexableP", "key"]
 - !private ["s22_RandomAccessIndexableP", "subscript"]
+- !private ["s22_RandomAccessIndexableP", "value"]
 - !private ["s26_RangeReplaceableIndexableP", "init"]
 - !private ["s26_RangeReplaceableIndexableP", "isEmpty"]
+- !private ["s26_RangeReplaceableIndexableP", "key"]
 - !private ["s26_RangeReplaceableIndexableP", "subscript"]
-- !private ["s11_StrideableP", "hashValue"]
+- !private ["s26_RangeReplaceableIndexableP", "value"]
 depends-nominal:
 - !private "Sa"
 - !private "s10ArraySliceV"
 - !private "s23BidirectionalCollectionP"
-- !private "s13BinaryIntegerP"
 - !private "Sb"
 - !private "s7CVarArgP"
 - !private "s10CollectionP"
-- !private "s10ComparableP"
 - !private "s28CustomDebugStringConvertibleP"
 - !private "s29CustomPlaygroundQuickLookableP"
 - !private "s17CustomReflectableP"
@@ -174,32 +210,26 @@ depends-nominal:
 - !private "s25ExpressibleByArrayLiteralP"
 - !private "s27ExpressibleByBooleanLiteralP"
 - !private "s43ExpressibleByExtendedGraphemeClusterLiteralP"
-- !private "s27ExpressibleByIntegerLiteralP"
 - !private "s26ExpressibleByStringLiteralP"
 - !private "s33ExpressibleByUnicodeScalarLiteralP"
-- !private "s17FixedWidthIntegerP"
 - "10CuckooHash0B7ElementV"
 - "10CuckooHash0B5TableV"
 - !private "s8HashableP"
-- !private "Si"
 - !private "s25LosslessStringConvertibleP"
-- !private "s10MirrorPathP"
+- !private "s25MutableBidirectionalSliceV"
 - !private "s17MutableCollectionP"
-- !private "s7NumericP"
+- !private "s24MutableRandomAccessSliceV"
+- !private "s12MutableSliceV"
 - !private "s22RandomAccessCollectionP"
 - !private "s26RangeReplaceableCollectionP"
+- !private "s21RangeReplaceableSliceV"
 - !private "s8SequenceP"
-- !private "s13SignedIntegerP"
-- !private "s13SignedNumericP"
 - !private "s12StaticStringV"
-- !private "s10StrideableP"
 - !private "s14_ArrayProtocolP"
 - !private "s23_BidirectionalIndexableP"
-- !private "s18_BitwiseOperationsP"
 - !private "s24_DestructorSafeContainerP"
 - !private "s35_ExpressibleByBuiltinBooleanLiteralP"
 - !private "s51_ExpressibleByBuiltinExtendedGraphemeClusterLiteralP"
-- !private "s35_ExpressibleByBuiltinIntegerLiteralP"
 - !private "s34_ExpressibleByBuiltinStringLiteralP"
 - !private "s41_ExpressibleByBuiltinUnicodeScalarLiteralP"
 - !private "s10_IndexableP"
@@ -208,7 +238,6 @@ depends-nominal:
 - !private "s21_ObjectiveCBridgeableP"
 - !private "s22_RandomAccessIndexableP"
 - !private "s26_RangeReplaceableIndexableP"
-- !private "s11_StrideableP"
 depends-dynamic-lookup:
 depends-external:
 - "/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/lib/swift/macosx/x86_64/Dispatch.apinotesc"
@@ -240,4 +269,4 @@ depends-external:
 - "/Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX10.13.sdk/System/Library/Frameworks/CoreGraphics.framework/Headers/CoreGraphics.apinotes"
 - "/Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX10.13.sdk/System/Library/Frameworks/AppKit.framework/Headers/AppKit.apinotes"
 - "/Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX10.13.sdk/System/Library/Frameworks/CoreText.framework/Headers/CoreText.apinotes"
-interface-hash: "40fa8bdce50e50b4b269b18ba48dfca2"
+interface-hash: "938e96e423588363ba137c36de389124"
