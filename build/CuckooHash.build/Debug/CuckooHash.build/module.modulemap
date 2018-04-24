@@ -1,0 +1,11 @@
+framework module CuckooHash {
+  umbrella header "CuckooHash.h"
+
+  export *
+  module * { export * }
+}
+
+module CuckooHash.Swift {
+    header "CuckooHash-Swift.h"
+    requires objc
+}

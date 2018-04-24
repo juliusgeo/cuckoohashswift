@@ -1,0 +1,10 @@
+framework module CuckooHash {
+  umbrella header "CuckooHash.h"
+
+  export *
+  module * { export * }
+}
+
+module CuckooHash.__Swift {
+    exclude header "CuckooHash-Swift.h"
+}

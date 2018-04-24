@@ -10,6 +10,7 @@
 		55A40D9E208F92CB00E6BE1D /* CuckooHash.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 55A40D94208F92CB00E6BE1D /* CuckooHash.framework */; };
 		55A40DA3208F92CB00E6BE1D /* CuckooHashTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 55A40DA2208F92CB00E6BE1D /* CuckooHashTests.swift */; };
 		55A40DA5208F92CB00E6BE1D /* CuckooHash.h in Headers */ = {isa = PBXBuildFile; fileRef = 55A40D97208F92CB00E6BE1D /* CuckooHash.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		55A40DAF208F92E600E6BE1D /* CuckooHash.swift in Sources */ = {isa = PBXBuildFile; fileRef = 55A40DAE208F92E600E6BE1D /* CuckooHash.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -29,6 +30,7 @@
 		55A40D9D208F92CB00E6BE1D /* CuckooHashTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = CuckooHashTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		55A40DA2208F92CB00E6BE1D /* CuckooHashTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CuckooHashTests.swift; sourceTree = "<group>"; };
 		55A40DA4208F92CB00E6BE1D /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		55A40DAE208F92E600E6BE1D /* CuckooHash.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CuckooHash.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -73,6 +75,7 @@
 			children = (
 				55A40D97208F92CB00E6BE1D /* CuckooHash.h */,
 				55A40D98208F92CB00E6BE1D /* Info.plist */,
+				55A40DAE208F92E600E6BE1D /* CuckooHash.swift */,
 			);
 			path = CuckooHash;
 			sourceTree = "<group>";
@@ -148,6 +151,7 @@
 				TargetAttributes = {
 					55A40D93208F92CB00E6BE1D = {
 						CreatedOnToolsVersion = 9.2;
+						LastSwiftMigration = 0920;
 						ProvisioningStyle = Automatic;
 					};
 					55A40D9C208F92CB00E6BE1D = {
@@ -196,6 +200,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				55A40DAF208F92E600E6BE1D /* CuckooHash.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -333,6 +338,7 @@
 		55A40DA9208F92CB00E6BE1D /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
+				CLANG_ENABLE_MODULES = YES;
 				CODE_SIGN_IDENTITY = "";
 				CODE_SIGN_STYLE = Automatic;
 				COMBINE_HIDPI_IMAGES = YES;
@@ -348,6 +354,7 @@
 				PRODUCT_BUNDLE_IDENTIFIER = com.juliuspark.CuckooHash;
 				PRODUCT_NAME = "$(TARGET_NAME:c99extidentifier)";
 				SKIP_INSTALL = YES;
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
 				SWIFT_VERSION = 4.0;
 			};
 			name = Debug;
@@ -355,6 +362,7 @@
 		55A40DAA208F92CB00E6BE1D /* Release */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
+				CLANG_ENABLE_MODULES = YES;
 				CODE_SIGN_IDENTITY = "";
 				CODE_SIGN_STYLE = Automatic;
 				COMBINE_HIDPI_IMAGES = YES;
@@ -377,6 +385,7 @@
 		55A40DAC208F92CB00E6BE1D /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				CODE_SIGN_STYLE = Automatic;
 				COMBINE_HIDPI_IMAGES = YES;
 				DEVELOPMENT_TEAM = GBFH8S6FUE;
@@ -391,6 +400,7 @@
 		55A40DAD208F92CB00E6BE1D /* Release */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				CODE_SIGN_STYLE = Automatic;
 				COMBINE_HIDPI_IMAGES = YES;
 				DEVELOPMENT_TEAM = GBFH8S6FUE;

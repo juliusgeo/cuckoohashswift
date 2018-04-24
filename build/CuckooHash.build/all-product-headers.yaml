@@ -1,0 +1,33 @@
+{
+  'version': 0,
+  'case-sensitive': 'false',
+  'roots': [
+    {
+      'type': 'directory',
+      'name': "/Users/juliuspark/Desktop/Projects/CuckooHash/build/Debug/CuckooHash.framework/Headers",
+      'contents': [
+        {
+          'type': 'file',
+          'name': "CuckooHash-Swift.h",
+          'external-contents': "/Users/juliuspark/Desktop/Projects/CuckooHash/build/Debug/CuckooHash.framework/Versions/A/Headers/CuckooHash-Swift.h"
+        },
+        {
+          'type': 'file',
+          'name': "CuckooHash.h",
+          'external-contents': "/Users/juliuspark/Desktop/Projects/CuckooHash/CuckooHash/CuckooHash.h"
+        }
+      ]
+    },
+    {
+      'type': 'directory',
+      'name': "/Users/juliuspark/Desktop/Projects/CuckooHash/build/Debug/CuckooHash.framework/Modules",
+      'contents': [
+        {
+          'type': 'file',
+          'name': "module.modulemap",
+          'external-contents': "/Users/juliuspark/Desktop/Projects/CuckooHash/build/CuckooHash.build/Debug/CuckooHash.build/module.modulemap"
+        }
+      ]
+    }
+  ]
+}
