@@ -7,19 +7,9 @@
 //
 
 import Foundation
-//class HashElement<T, U>{
-//    var key: T
-//    var value: U?
-//
-//    init(key: T, value: U?) {
-//        self.key = key
-//        self.value = value
-//    }
-//}
 struct HashElement <Int, U>{
     let key: Int
     let value: U
-    
 }
 
 struct HashTable<Key: Hashable, Value> {
@@ -28,46 +18,67 @@ struct HashTable<Key: Hashable, Value> {
     typealias Bucket = [HashElement<Key, Any>]
     var bucket1: [Bucket]
     var bucket2: [Bucket]
-    init(capacity: Int){
+    var knockoutLimit: Int
+    var knockouts = 0
+    init(capacity: Int, knockoutLimit: Int){
         self.bucket1=Array<Bucket>(repeatElement([], count: capacity))
         self.bucket2=Array<Bucket>(repeatElement([], count: capacity))
         self.bucketsize=capacity*2
         self.capacity=capacity
+        self.knockoutLimit=knockoutLimit
         assert(capacity > 0)
     }
-    func hash1(key: Key) -> Int {
-        return (key.hashValue) % self.capacity
-    }
-    func hash2(key: Key) -> Int {
-        return (key.hashValue/3) % self.capacity
+    func hash(key: Key, space: Int) -> Int {
+        switch space {
+        case 1:
+            return (key.hashValue) % (self.capacity-1)
+        case 2:
+            return (key.hashValue*3) % (self.capacity-1)
+        default:
+            return 0;
+        }
     }
     mutating func setValue(hashElem: HashElement<Key, Any>) -> Void{
-        var bucket1=self.bucket1
-        var bucket2=self.bucket2
-        self.set(newHashElem: hashElem, bucket1: &bucket1, bucket2: &bucket2, space: 1)
+        self.set(newHashElem: hashElem, space: 1)
     }
-    mutating func set(newHashElem: HashElement<Key, Any>, bucket1: inout Array<Bucket>, bucket2: inout Array<Bucket>, space: Int){
-        let index=0;
-        if(space==1){
-            let index=hash1(key: newHashElem.key)
+    mutating func set(newHashElem: HashElement<Key, Any>, space: Int){
+        if(knockouts>knockoutLimit){
+            return
         }
-        else if(space==2){
-            let index=hash2(key: newHashElem.key)
+        
+        let index=hash(key: newHashElem.key, space: space);
+        switch space {
+        case 1:
+            if(self.bucket1[index].isEmpty){
+                self.bucket1[index]=[newHashElem]
+                knockouts=0
+            }
+            else{
+                knockouts = knockouts+1
+                let oldHashElem=self.bucket1[index][0]
+                set(newHashElem: oldHashElem, space: 2)
+            }
+        case 2:
+            if(self.bucket2[index].isEmpty){
+                self.bucket2[index]=[newHashElem]
+                knockouts=0
+            }
+            else{
+                knockouts = knockouts+1
+                let oldHashElem=self.bucket2[index][0]
+                set(newHashElem: oldHashElem, space: 1)
+            }
+        default:
+            print("Failed")
         }
-        if(bucket1[index].isEmpty){
-            bucket1[index]=[newHashElem]
-        }
-        else{
-            let oldHashElem=bucket1[index][0]
-            set(newHashElem: oldHashElem, bucket1: &bucket2, bucket2: &bucket1, space: (space+1)%2)
-        }
+        
     }
     nonmutating func getValue(key: Key) -> Any{
-        if(self.bucket1[hash1(key: key)][0].key==key){
-            return self.bucket1[hash1(key: key)][0].value
+        if(self.bucket1[hash(key: key, space:1)][0].key==key){
+            return self.bucket1[hash(key: key, space:1)][0].value
         }
-        else if(self.bucket2[hash2(key: key)][0].key==key){
-            return self.bucket2[hash2(key: key)][0].value
+        else if(self.bucket2[hash(key: key, space: 2)][0].key==key){
+            return self.bucket2[hash(key: key, space: 2)][0].value
         }
         else{
             return -1;
