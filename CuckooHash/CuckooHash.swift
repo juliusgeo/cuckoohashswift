@@ -9,20 +9,19 @@
 import Foundation
 struct HashElement <Int, U>{
     let key: Int
-    let value: U
+    var value: U
 }
 
 struct HashTable<Key: Hashable, Value> {
-    var capacity: Int
-    
-    
-    var bucketsize: Int
-    let numBuckets: Int
     typealias Bucket = [HashElement<Key, Any>]
+    let capacity: Int
+    let bucketsize: Int
+    let numBuckets: Int
     var buckets = [[Bucket]]()
-    var knockoutLimit: Int
+    let knockoutLimit: Int
     var knockouts = 0
-    var hashcs: [Int]
+    let hashcs: [Int]
+    
     init(numBuckets: Int, capacity: Int, knockoutLimit: Int){
         for i in 0...numBuckets-1{
             print(i)
@@ -60,6 +59,18 @@ struct HashTable<Key: Hashable, Value> {
         }
         
     }
+    nonmutating func getLoadFactor() -> Float
+    {   var inc=0
+        for bucket in buckets{
+            for elem in bucket{
+                if(elem.indices.upperBound > 0){
+                    inc = inc+1
+                }
+            }
+        }
+        let totalCap = self.numBuckets*self.capacity
+        return (Float(inc)/Float(totalCap))as Float
+    }
     
     nonmutating func getValue(key: Key) -> Any{
         for i in 0...self.numBuckets-1 {
@@ -71,5 +82,15 @@ struct HashTable<Key: Hashable, Value> {
             }
         }
         return -1
+    }
+    mutating func updateValue(key: Key, newValue: Value){
+        for i in 0...self.numBuckets-1 {
+            let index = hash(key: key, space: i)
+            if(self.buckets[i][index].indices.upperBound > 0){
+                if(self.buckets[i][index][0].key == key){
+                    self.buckets[i][index][0].value = newValue
+                }
+            }
+        }
     }
 }

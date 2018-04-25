@@ -11,6 +11,7 @@ provides-member:
 provides-dynamic-lookup:
 depends-top-level:
 - !private "%"
+- !private "*"
 - !private "+"
 - !private "-"
 - !private "..."
@@ -19,6 +20,8 @@ depends-top-level:
 - !private ">"
 - !private "Array"
 - "AssignmentPrecedence"
+- "CastingPrecedence"
+- "Float"
 - "HashElement"
 - "HashTable"
 - "Hashable"
@@ -46,6 +49,7 @@ depends-member:
 - !private ["s23BidirectionalCollectionP", "subscript"]
 - !private ["s23BidirectionalCollectionP", "upperBound"]
 - !private ["s23BidirectionalCollectionP", "value"]
+- !private ["s19BinaryFloatingPointP", "init"]
 - !private ["s13BinaryIntegerP", "init"]
 - !private ["Sb", "_getBuiltinLogicValue"]
 - !private ["s7CVarArgP", "append"]
@@ -112,10 +116,13 @@ depends-member:
 - !private ["s25ExpressibleByArrayLiteralP", "value"]
 - !private ["s27ExpressibleByBooleanLiteralP", "_getBuiltinLogicValue"]
 - !private ["s43ExpressibleByExtendedGraphemeClusterLiteralP", "init"]
+- !private ["s25ExpressibleByFloatLiteralP", "init"]
 - !private ["s27ExpressibleByIntegerLiteralP", "init"]
 - !private ["s26ExpressibleByStringLiteralP", "init"]
 - !private ["s33ExpressibleByUnicodeScalarLiteralP", "init"]
 - !private ["s17FixedWidthIntegerP", "init"]
+- !private ["Sf", "init"]
+- !private ["s13FloatingPointP", "init"]
 - ["10CuckooHash0B7ElementV", "Int"]
 - ["10CuckooHash0B7ElementV", "U"]
 - ["10CuckooHash0B7ElementV", "init"]
@@ -123,15 +130,18 @@ depends-member:
 - ["10CuckooHash0B7ElementV", "value"]
 - !private ["10CuckooHash0B5TableV", "Array"]
 - ["10CuckooHash0B5TableV", "Bucket"]
+- ["10CuckooHash0B5TableV", "Float"]
 - ["10CuckooHash0B5TableV", "HashElement"]
 - ["10CuckooHash0B5TableV", "Int"]
 - ["10CuckooHash0B5TableV", "Key"]
+- ["10CuckooHash0B5TableV", "Value"]
 - ["10CuckooHash0B5TableV", "Void"]
 - !private ["10CuckooHash0B5TableV", "arc4random_uniform"]
 - !private ["10CuckooHash0B5TableV", "assert"]
 - ["10CuckooHash0B5TableV", "buckets"]
 - ["10CuckooHash0B5TableV", "bucketsize"]
 - ["10CuckooHash0B5TableV", "capacity"]
+- ["10CuckooHash0B5TableV", "getLoadFactor"]
 - ["10CuckooHash0B5TableV", "getValue"]
 - ["10CuckooHash0B5TableV", "hash"]
 - ["10CuckooHash0B5TableV", "hashcs"]
@@ -143,6 +153,7 @@ depends-member:
 - !private ["10CuckooHash0B5TableV", "repeatElement"]
 - ["10CuckooHash0B5TableV", "set"]
 - ["10CuckooHash0B5TableV", "setValue"]
+- ["10CuckooHash0B5TableV", "updateValue"]
 - !private ["s8HashableP", "_getBuiltinLogicValue"]
 - !private ["s8HashableP", "hashValue"]
 - !private ["s8HashableP", "init"]
@@ -218,6 +229,8 @@ depends-member:
 - !private ["s23_BidirectionalIndexableP", "upperBound"]
 - !private ["s23_BidirectionalIndexableP", "value"]
 - !private ["s18_BitwiseOperationsP", "init"]
+- !private ["s15_CVarArgAlignedP", "init"]
+- !private ["s22_CVarArgPassedAsDoubleP", "init"]
 - !private ["s24_DestructorSafeContainerP", "append"]
 - !private ["s24_DestructorSafeContainerP", "indices"]
 - ["s24_DestructorSafeContainerP", "init"]
@@ -226,6 +239,7 @@ depends-member:
 - !private ["s24_DestructorSafeContainerP", "value"]
 - !private ["s35_ExpressibleByBuiltinBooleanLiteralP", "_getBuiltinLogicValue"]
 - !private ["s51_ExpressibleByBuiltinExtendedGraphemeClusterLiteralP", "init"]
+- !private ["s33_ExpressibleByBuiltinFloatLiteralP", "init"]
 - !private ["s35_ExpressibleByBuiltinIntegerLiteralP", "init"]
 - !private ["s34_ExpressibleByBuiltinStringLiteralP", "init"]
 - !private ["s39_ExpressibleByBuiltinUTF16StringLiteralP", "init"]
@@ -278,6 +292,7 @@ depends-nominal:
 - "Sa"
 - !private "s10ArraySliceV"
 - "s23BidirectionalCollectionP"
+- !private "s19BinaryFloatingPointP"
 - !private "s13BinaryIntegerP"
 - !private "Sb"
 - "s7CVarArgP"
@@ -295,10 +310,13 @@ depends-nominal:
 - "s25ExpressibleByArrayLiteralP"
 - !private "s27ExpressibleByBooleanLiteralP"
 - !private "s43ExpressibleByExtendedGraphemeClusterLiteralP"
+- !private "s25ExpressibleByFloatLiteralP"
 - !private "s27ExpressibleByIntegerLiteralP"
 - !private "s26ExpressibleByStringLiteralP"
 - !private "s33ExpressibleByUnicodeScalarLiteralP"
 - !private "s17FixedWidthIntegerP"
+- !private "Sf"
+- !private "s13FloatingPointP"
 - "10CuckooHash0B7ElementV"
 - "10CuckooHash0B5TableV"
 - !private "s8HashableP"
@@ -336,9 +354,12 @@ depends-nominal:
 - "s14_ArrayProtocolP"
 - "s23_BidirectionalIndexableP"
 - !private "s18_BitwiseOperationsP"
+- !private "s15_CVarArgAlignedP"
+- !private "s22_CVarArgPassedAsDoubleP"
 - "s24_DestructorSafeContainerP"
 - !private "s35_ExpressibleByBuiltinBooleanLiteralP"
 - !private "s51_ExpressibleByBuiltinExtendedGraphemeClusterLiteralP"
+- !private "s33_ExpressibleByBuiltinFloatLiteralP"
 - !private "s35_ExpressibleByBuiltinIntegerLiteralP"
 - !private "s34_ExpressibleByBuiltinStringLiteralP"
 - !private "s39_ExpressibleByBuiltinUTF16StringLiteralP"
@@ -385,4 +406,4 @@ depends-external:
 - "/Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX10.13.sdk/System/Library/Frameworks/CoreGraphics.framework/Headers/CoreGraphics.apinotes"
 - "/Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX10.13.sdk/System/Library/Frameworks/AppKit.framework/Headers/AppKit.apinotes"
 - "/Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX10.13.sdk/System/Library/Frameworks/CoreText.framework/Headers/CoreText.apinotes"
-interface-hash: "1c104178b03e5cd664fe690990dba0b5"
+interface-hash: "cc8e71b4b4dbf1f3ad9aefd1e13be529"
