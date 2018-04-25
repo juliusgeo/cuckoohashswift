@@ -1,2 +1,3 @@
 # Cuckoo Hash Swift
-Cuckoo Hash algorithm implemented in Swift. Cuckoo hashing is a very quick hashing algorithm. Though it isn't used much outside of academia, elements of it's design are used in generating lookup tables, etc
+[Cuckoo HashMap](https://en.wikipedia.org/wiki/Cuckoo_hashing) algorithm implemented in Swift. 
+This implementation supports arbitrary numbers of buckets/hash maps, and arbitrary capacity for each bucket. 
