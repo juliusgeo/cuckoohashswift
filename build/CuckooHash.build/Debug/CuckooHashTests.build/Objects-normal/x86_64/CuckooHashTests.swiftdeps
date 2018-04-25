@@ -16,7 +16,6 @@ depends-top-level:
 - "CuckooHashTests"
 - !private "HashElement"
 - !private "HashTable"
-- !private "Int"
 - !private "String"
 - !private "StringLiteralType"
 - !private "UnicodeScalarType"
@@ -37,7 +36,6 @@ depends-member:
 - !private ["s10ComparableP", "init"]
 - !private ["15CuckooHashTestsAAC", "HashElement"]
 - !private ["15CuckooHashTestsAAC", "HashTable"]
-- !private ["15CuckooHashTestsAAC", "Int"]
 - !private ["15CuckooHashTestsAAC", "String"]
 - ["15CuckooHashTestsAAC", "deinit"]
 - ["15CuckooHashTestsAAC", "init"]
@@ -84,7 +82,6 @@ depends-member:
 - !private ["10CuckooHash0B7ElementV", "init"]
 - !private ["10CuckooHash0B5TableV", "bucket1"]
 - !private ["10CuckooHash0B5TableV", "bucket2"]
-- !private ["10CuckooHash0B5TableV", "getValue"]
 - !private ["10CuckooHash0B5TableV", "init"]
 - !private ["10CuckooHash0B5TableV", "setValue"]
 - !private ["s8HashableP", "HashElement"]
@@ -105,7 +102,6 @@ depends-member:
 - !private ["So16NSMutableCopyingP", "init"]
 - !private ["So8NSObjectC", "HashElement"]
 - !private ["So8NSObjectC", "HashTable"]
-- !private ["So8NSObjectC", "Int"]
 - !private ["So8NSObjectC", "String"]
 - ["So8NSObjectC", "init"]
 - !private ["So8NSObjectC", "measure"]
@@ -153,7 +149,6 @@ depends-member:
 - ["So17XCTWaiterDelegateP", ""]
 - !private ["So6XCTestC", "HashElement"]
 - !private ["So6XCTestC", "HashTable"]
-- !private ["So6XCTestC", "Int"]
 - !private ["So6XCTestC", "String"]
 - ["So6XCTestC", "init"]
 - !private ["So6XCTestC", "measure"]
@@ -164,7 +159,6 @@ depends-member:
 - ["So6XCTestC", "testPerformanceExample"]
 - !private ["So10XCTestCaseC", "HashElement"]
 - !private ["So10XCTestCaseC", "HashTable"]
-- !private ["So10XCTestCaseC", "Int"]
 - !private ["So10XCTestCaseC", "String"]
 - ["So10XCTestCaseC", "init"]
 - !private ["So10XCTestCaseC", "measure"]

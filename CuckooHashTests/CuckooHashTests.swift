@@ -24,26 +24,26 @@ class CuckooHashTests: XCTestCase {
     func testAddingCollisions() {
         // This is an example of a functional test case.
         // Use XCTAssert and related functions to verify your tests produce the correct results.
-        var hash = HashTable<Int, Any>(capacity: 10, knockoutLimit: 200)
+        var hash = HashTable<String, Any>(capacity: 10, knockoutLimit: 20)
         print(hash.bucket1)
         print(hash.bucket2)
-        for i in 1...21
+        for i in 1...10
         {   print(i)
-            let temp = HashElement<Int, Any>(key: i+1, value: "Value "+String(i))
+            let temp = HashElement<String, Any>(key: String(i), value: "Value "+String(i))
             hash.setValue(hashElem: temp)
-            print("Bucket 1 \n")
             print(hash.bucket1)
-            print("Bucket 2 \n")
+            print("\n")
             print(hash.bucket2)
         }
-        print("\n")
-        print("\n")
-        print("\n")
-        print("Testing getting values\n")
-        for i in 1...21
-        {
-            print(hash.getValue(key: i))
-        }
+//        print("\n")
+//        print("\n")
+//        print("\n")
+//        print("Testing getting values\n")
+//        for i in 1...21
+//        {
+//            print(hash.getValue(key: String(i)))
+//        }
+        
         
     }
     

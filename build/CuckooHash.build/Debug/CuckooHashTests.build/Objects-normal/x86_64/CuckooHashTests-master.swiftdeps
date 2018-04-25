@@ -1,5 +1,5 @@
 version: "Apple Swift version 4.0.3 (swiftlang-900.0.74.1 clang-900.0.39.2)"
 options: "458ce304a955f93b97fc8fcc44ccd374"
-build_time: [1524610338, 732625000]
+build_time: [1524620617, 689361000]
 inputs:
-  "/Users/juliuspark/Desktop/Projects/CuckooHash/CuckooHashTests/CuckooHashTests.swift": [1524610334, 0]
+  "/Users/juliuspark/Desktop/Projects/CuckooHash/CuckooHashTests/CuckooHashTests.swift": [1524620613, 0]
