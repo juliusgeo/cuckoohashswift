@@ -82,6 +82,7 @@ depends-member:
 - !private ["10CuckooHash0B7ElementV", "init"]
 - !private ["10CuckooHash0B5TableV", "bucket1"]
 - !private ["10CuckooHash0B5TableV", "bucket2"]
+- !private ["10CuckooHash0B5TableV", "getValue"]
 - !private ["10CuckooHash0B5TableV", "init"]
 - !private ["10CuckooHash0B5TableV", "setValue"]
 - !private ["s8HashableP", "HashElement"]

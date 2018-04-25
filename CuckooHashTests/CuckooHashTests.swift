@@ -35,14 +35,14 @@ class CuckooHashTests: XCTestCase {
             print("\n")
             print(hash.bucket2)
         }
-//        print("\n")
-//        print("\n")
-//        print("\n")
-//        print("Testing getting values\n")
-//        for i in 1...21
-//        {
-//            print(hash.getValue(key: String(i)))
-//        }
+        print("\n")
+        print("\n")
+        print("\n")
+        print("Testing getting values\n")
+        for i in 1...10
+        {
+            print(hash.getValue(key: String(i)))
+        }
         
         
     }

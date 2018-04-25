@@ -85,34 +85,47 @@ struct HashTable<Key: Hashable, Value> {
         }
         
     }
+    
     nonmutating func getValue(key: Key) -> Any{
         //calculate indices
         let index1 = hash(key: key, space:1)
         let index2 = hash(key: key, space:2)
-        let val1 = key
-        let val2 = key
         //make sure that an object exists at the indices
+        //this is a bullshit mess but working on cleaning it up
+        //works for now, tho
         if(self.bucket1[index1].indices.upperBound > 0){
             let val1 = self.bucket1[index1][0].key
-            print("Index exists in bucket1")
-        }
-        if(self.bucket2[index2].indices.upperBound > 0){
-            let val2 = self.bucket2[index2][0].key
-            print("Index exists in bucket2")
-        }
-        
-        
-        print("ind1:",index1, "ind2",index2)
-        print("val1:",val1, "val2",val2)
-        if(val1==key){
-            return self.bucket1[hash(key: key, space:1)][0].value
-        }
-        else if(val2==key){
-            return self.bucket2[hash(key: key, space:2)][0].value
+            if(val1==key){
+                print("Index exists in bucket1")
+                return self.bucket1[hash(key: key, space:1)][0].value
+            }
+            else{
+                if(self.bucket2[index2].indices.upperBound > 0){
+                    let val2 = self.bucket2[index2][0].key
+                    if(val2==key){
+                        print("Index exists in bucket2")
+                        return self.bucket2[hash(key: key, space:2)][0].value
+                    }
+                }else{
+                    return -1
+                }
+                
+            }
         }
         else{
-            return -1;
+            if(self.bucket2[index2].indices.upperBound > 0){
+                let val2 = self.bucket2[index2][0].key
+                if(val2==key){
+                    print("Index exists in bucket2")
+                    return self.bucket2[hash(key: key, space:2)][0].value
+                }
+            }else{
+                return -1
+            }
         }
+        return -1
+//        print("ind1:",index1, "ind2",index2)
+//        print("val1:",val1, "val2",val2)
         
     }
 }
